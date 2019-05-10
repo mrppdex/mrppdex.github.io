@@ -39,15 +39,23 @@ Now, to find, let's say 95% Confidence Interval, we can calculate Fisher Informa
 
 Fisher information is the expected value of the negative second derivative of the log-likelihood function w.r.t. the parameter of interest:
 
-$$ \mathsrc{I}(\theta) = E\left[-\frac{\partial^2}{\partial \theta^2} \log {f(X; \theta)} | \theta \right] $$
+$$ I(\theta) = E\left[-\frac{\partial^2}{\partial \theta^2} \log {f(X; \theta)} | \theta \right] $$
 
 Hence, 
 
-$$ \mathscr{I}(\lambda) = E_{\lambda} \left[-\frac{\partial^2}{\partial \lambda^2} \mathscr{l}(X)\right] = E_{\lambda} \left[ \frac{\sum x_i}{\lambda^2}\right] $$
+$$ I(\lambda) = E_{\lambda} \left[-\frac{\partial^2}{\partial \lambda^2} \mathscr{l}(X)\right] = E_{\lambda} \left[ \frac{\sum x_i}{\lambda^2}\right] $$
 
 Now, because we don't have the population parameter $$\lambda$$, we have to substitute it with our already calculated $$\hat{\lambda}$$ to get:
 
-$$ \mathscr{I} = E_{\lambda} \left[\frac{n}{\bar{x}}\right] = \frac{n}{\bar{x}} $$
+$$ I(\lambda) = E_{\lambda} \left[\frac{n}{\bar{x}}\right] = \frac{n}{\bar{x}} $$
+
+Knowing that, we can construct the CI:
+
+$$ \hat{\theta} \pm Z_{(1-\alpha)100%} {I(\theta)}^{-\frac{1}{2}} $$
+
+$$ \hat{\lambda} \pm Z_{95%} {I(\lambda)}^{-\frac{1}{2}} = 6.11 \pm 1.61 = (4.50, 7.73)
+
+### Bootstrapping.
 
 ## Outro
 
