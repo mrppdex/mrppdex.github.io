@@ -16,14 +16,30 @@ We know, that what we are looking for is a Random Variable (RV) which is distrib
 
 $$ X \sim \mathcal{Poisson}(\lambda) = \frac{\lambda^x}{x!}e^{-\lambda} $$
 
+What we don't know, is the value of the parameter $$\lambda$$. To find it, first we have to come up with our estimator, and then, to estimate the maximum likelihood value of the parameter, that is, the parameter, that maximizes the likelihood function for the given observations.
+
 The likelihood function is a product of $$n$$ probability mass functions, where n is the sample size:
 
 $$ L(x) = \prod_{i=1}^{n} \frac{\lambda^x}{x_i!}e^{-\lambda} $$
 
 To simplify the operations, we will be maximizing log-likehood function:
 
-$$ \mathcal{l}(x) = \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\lambda}}
+$$ \mathscr{l}(x) = \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\lambda}}
                   = \frac{\sum x_i}{\lambda} - \log{\prod {x_i}!} -n\lambda $$
+                  
+Assuming, the function is concave, we can find the global maximum by differentiating the log-likelihood function w.r.t. λ and finding where does it equal to 0:
+
+$$ \frac{\partial \mathscr{l}(\lambda)}{\partial \lambda} = \frac{\sum x_i}{\lambda} - n = 0 \Rightarrow \lambda = \frac{\sum x_i}{n} $$
+
+Hence, our MLE λ is the mean value of the observations.
+
+Now, to find, let's say 95% Confidence Interval, we can calculate Fisher Information and use it to calculate the CI of interest, or we can use the technique called Bootstrapping.
+
+### Fisher Information.
+
+Fisher information is the expected value of the negative second derivative of the log-likelihood function w.r.t. the parameter of interest:
+
+$$ \mathsrc{I}(\theta) = E\left[-\frac{\partial^2}{\partial \theta^2} \log {f(X; \theta) | \theta \right] $$
 
 ## Outro
 
