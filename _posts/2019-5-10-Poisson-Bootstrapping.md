@@ -1,14 +1,21 @@
 ---
 layout: post
 mathjax: true
-title: Bootstrapping vs. Analytical Solution
+title: Finding MLE of Distribution's Parameters 
 ---
 
-# Intro
+## Intro
 
-Either use analytical solution to find the parameters \\((\theta)\\) Confidence Interval, 
-or just run simulation and bootstrap the parameter!
+Let's say, we count cars taking a right-hand turn at a road intersection during single sequences of the traffic lights controlling the intersection:
 
-# Outro
+| No. of Cars|
+| --- |
+|4 9 0 5 8 10 6 8 5|
+
+We know, that what we are looking for is a Random Variable (RV) which is distributed according to the Poisson Distribution with parameter \\(\lambda\\): $$ X \sim \mathcal{Poiss}(\lambda) $$
+
+
+
+## Outro
 
 OK
