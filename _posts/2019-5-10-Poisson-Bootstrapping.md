@@ -29,7 +29,7 @@ $$ \mathscr{l}(x) = \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\
                   
 Assuming, the function is concave, we can find the global maximum by differentiating the log-likelihood function w.r.t. λ and finding where does it equal to 0:
 
-$$ \frac{\partial \mathscr{l}(\lambda)}{\partial \lambda} = \frac{\sum x_i}{\lambda} - n = 0 \Rightarrow \lambda = \frac{\sum x_i}{n} $$
+$$ \frac{\partial \mathscr{l}(\lambda)}{\partial \lambda} = \frac{\sum x_i}{\lambda} - n = 0 \Rightarrow \hat{\lambda} = \frac{\sum x_i}{n} $$
 
 Hence, our MLE λ is the mean value of the observations.
 
@@ -39,7 +39,15 @@ Now, to find, let's say 95% Confidence Interval, we can calculate Fisher Informa
 
 Fisher information is the expected value of the negative second derivative of the log-likelihood function w.r.t. the parameter of interest:
 
-$$ \mathsrc{I}(\theta) = E\left[-\frac{\partial^2}{\partial \theta^2} \log {f(X; \theta) | \theta \right] $$
+$$ \mathsrc{I}(\theta) = E\left[-\frac{\partial^2}{\partial \theta^2} \log {f(X; \theta)} | \theta \right] $$
+
+Hence, 
+
+$$ \mathscr{I}(\lambda) = E_{\lambda} \left[-\frac{\partial^2}{\partial \lambda^2} \mathscr{l}(X)\right] = E_{\lambda} \left[ \frac{\sum x_i}{\lambda^2}\right] $$
+
+Now, because we don't have the population parameter $$\lambda$$, we have to substitute it with our already calculated $$\hat{\lambda}$$ to get:
+
+$$ \mathscr{I} = E_{\lambda} \left[\frac{n}{\bar{x}}\right] = \frac{n}{\bar{x}} $$
 
 ## Outro
 
