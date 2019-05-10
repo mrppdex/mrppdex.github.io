@@ -25,7 +25,7 @@ $$ L(x) = \prod_{i=1}^{n} \frac{\lambda^x}{x_i!}e^{-\lambda} $$
 To simplify the operations, we will be maximizing log-likehood function:
 
 $$ \mathscr{l}(x) = \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\lambda}}
-                  = \sum x_i}\log{\lambda} - \log{\prod {x_i}!} -n\lambda $$
+                  = \sum x_i\log{\lambda} - \log{\prod {x_i}!} -n\lambda $$
                   
 Assuming, the function is concave, we can find the global maximum by differentiating the log-likelihood function w.r.t. λ and finding where does it equal to 0:
 
