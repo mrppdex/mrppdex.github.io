@@ -51,11 +51,34 @@ $$ I(\lambda) = E_{\lambda} \left[\frac{n}{\bar{x}}\right] = \frac{n}{\bar{x}} $
 
 Knowing that, we can construct the CI:
 
-$$ \hat{\theta} \pm Z_{(1-\alpha)100%} {I(\theta)}^{-\frac{1}{2}} $$
+$$ \hat{\theta} \pm Z_{(1-\alpha)100\%} {I(\theta)}^{-\frac{1}{2}} $$
 
-$$ \hat{\lambda} \pm Z_{95%} {I(\lambda)}^{-\frac{1}{2}} = 6.11 \pm 1.61 = (4.50, 7.73)
+$$ \hat{\lambda} \pm Z_{95%} {I(\lambda)}^{-\frac{1}{2}} = 6.11 \pm 1.61 = (4.50, 7.73) $$
 
 ### Bootstrapping.
+
+Bootstrapping IS simulation. 
+
+1. First we calculate the MLE of the parameter of interest ($$\hat{\lambda}$$),
+2. We poll n samples from the distribution with this parameter (n is the length of the original observation vector),
+3. We calculate the MLE of the parameter, using simulated sample,
+4. Calculate the variance of all the simulated MLEs!
+
+{% highlight python linenos %}
+import numpy as np
+from scipy import stats 
+
+original_sample = np.array([4, 9, 0, 5, 8, 10, 6, 8, 5])
+mean_original_sample = np.mean(original_sample)
+
+simulated_lambdas = np.mean(np.random.poisson(lam=mean_original_sample, size=(10000, len(s))), axis=1)
+params = stats.norm.fit(simulated_lambdas)
+stats.norm(*params).interval(0.95)
+
+{% endhighlight %}
+
+We get:
+`(4.505783477364434, 7,712260967080009)`
 
 ## Outro
 
