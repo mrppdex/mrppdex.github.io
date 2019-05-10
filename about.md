@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Proficient individual with strong educational background in data analysis and proven experience in leading various administrative procedures within high-profile organisation.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Actively looking for new career opportunities.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[aspiela@gmail.com](mailto:aspiela@gmail.com)
