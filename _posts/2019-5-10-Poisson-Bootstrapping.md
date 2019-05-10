@@ -18,12 +18,12 @@ $$ X \sim \mathcal{Poisson}(\lambda) = \frac{\lambda^x}{x!}e^{-\lambda} $$
 
 The likelihood function is a product of $$n$$ probability mass functions, where n is the sample size:
 
-$$ L(x) &= \prod_{i=1}^{n} \frac{\lambda^x}{x_i!}e^{-\lambda} $$
+$$ L(x) = \prod_{i=1}^{n} \frac{\lambda^x}{x_i!}e^{-\lambda} $$
 
 To simplify the operations, we will be maximizing log-likehood function:
 
-$$ \mathcal{l}(x) &= \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\lambda}}
-                  &= \frac{\sum x_i}{\lambda} - \log{\prod {x_i}!} -n\lambda $$
+$$ \mathcal{l}(x) = \log{L(x)} = \sum_{i=1}^{n} \log{\frac{\lambda^x}{x_i!}e^{-\lambda}}
+                  = \frac{\sum x_i}{\lambda} - \log{\prod {x_i}!} -n\lambda $$
 
 ## Outro
 
