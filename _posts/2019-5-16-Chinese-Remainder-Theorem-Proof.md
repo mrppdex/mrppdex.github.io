@@ -4,8 +4,6 @@ mathjax: true
 title: Chinese Remainder Theorem Proof
 ---
 
-For some reason I couldn't find what I was looking for, hence I had to do it myself.
-
 $$
 \begin{cases}
 x  & \equiv a \text{(mod m)} \\
