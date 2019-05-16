@@ -22,6 +22,13 @@ x& = b+nj\text{ (2)}
 \end{align*} 
 $$
 
+$$
+\begin{align*}
+b+nj \equiv a\text{ (mod m)} \Rightarrow b+nj &= a + mk\\
+nj &=a-b+mk
+\end{align*}
+$$
+
 From(1):
 $$n^{-1} =w$$
 Hence:
