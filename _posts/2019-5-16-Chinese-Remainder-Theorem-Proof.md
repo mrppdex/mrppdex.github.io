@@ -4,6 +4,8 @@ mathjax: true
 title: Chinese Remainder Theorem Proof
 ---
 
+### Chinese Remainder Theorem Proof
+
 $$
 \begin{cases}
 x  & \equiv a \text{(mod m)} \\
@@ -30,7 +32,9 @@ $$
 From(1):
 
 $$n^{-1} =w$$
+
 Hence:
+
 $$j=w(a-b)+mkw$$
 
 Substitution to (2) gives us:
