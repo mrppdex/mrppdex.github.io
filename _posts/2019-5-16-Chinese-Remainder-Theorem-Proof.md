@@ -30,11 +30,13 @@ nj &=a-b+mk
 $$
 
 From(1):
+
 $$n^{-1} =w$$
 Hence:
 $$j=w(a-b)+mkw$$
 
 Substitution to (2) gives us:
+
 $$
 \begin{align*}
 x &= b+n\left[w(a-b)+mkw\right]\\
