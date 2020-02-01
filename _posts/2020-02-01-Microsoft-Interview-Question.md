@@ -21,6 +21,7 @@ Now, we have two unknowns that we want to find, hence we need 2 equations:
 $$l = \int^{l}_{0} ds = 2.5, \text{ where } ds = \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx$$
 
 $$\frac{d}{dx} cosh(a x) = a sinh(x)$$
+
 $$\int^l_0 \sqrt{1+a^2 sinh^2 (a x)}\ dx = 2$$
 
 Now, we can use e.g. Numpy trapezoid numerical integration to calculate that integral. If we guess $$l$$ (the half of the span between the columns), then parameter $$a=1.5668/l$$.
@@ -45,4 +46,4 @@ This simulation, gives us the answer to what the $$l$$ could be. With $$l=1.15$$
 
 **Answer:**
 
-*The span between the poles is around **23** meters.*
+*The span between the poles is around **46** meters.*
