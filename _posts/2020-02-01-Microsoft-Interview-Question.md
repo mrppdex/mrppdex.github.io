@@ -19,7 +19,7 @@ We have three unknowns that we want to find, hence we need 3 equations:
 
 2) Let $$l = \frac{L}{2}$$, then $$f(l) = 20 cosh(b l)=50 \Rightarrow bl = cosh^{-1}(2.5) \approx 1.5668$$
 
-3) The length of a curve can be caluclated from:
+3) The length of a curve can be calculated by:
 $$l = \int^{l}_{0} ds = 40, \text{ where } ds = \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx$$
 
 Fortunately, $$cosh$$ has the useful property, such that the area underneath it is equal to the length of the curve above. Therefore:
@@ -40,4 +40,4 @@ So, $$\frac{L}{2}=1.3677 \Rightarrow L=2.7353$$
 
 **Answer:**
 
-*The span between the poles is around **2.7353** meters.*
+*The span between the poles is around **2.7353** meters long.*
