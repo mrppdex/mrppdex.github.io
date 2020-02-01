@@ -8,7 +8,7 @@ title: Microsoft Interview Question
 
 *Find the span between the columns if the distance between the lowest point and the ground is 20m, the height of the poles is 50m and the length of the string spanned between them is 80m*
 
-![alt text](ms_span.png)
+![alt text](/_posts/ms_span.png)
 
 
 From the mechanics lessons, I remember that the chain spanned between two points under the gravitational force takes the shape of a $$cosh$$ function. Hence, we are trying to solve $$f(x) = a cosh(b x)$$, for $$a$$ and $$b$$.
