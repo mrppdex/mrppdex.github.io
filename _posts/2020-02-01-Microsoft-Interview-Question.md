@@ -38,6 +38,7 @@ for l in np.linspace(1.15, 1.153, 100):
 
 a = 1.5668/1.152
 g = lambda x: np.cosh(a*x)
+
 {% endhighlight %}
 
 This simulation, gives us the answer to what the $$l$$ could be. With $$l=1.15$$ the integral integrates to 2.0, and after multiplying it by the scaling factor (20) we get $$l=23$$ meters.
