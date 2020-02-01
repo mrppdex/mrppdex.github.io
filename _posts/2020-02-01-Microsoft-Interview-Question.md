@@ -11,33 +11,37 @@ title: Microsoft Interview Question
 ![alt text](/images/ms_span.png)
 
 
-From the mechanics lessons, I remember that the chain spanned between two points under the gravitational force takes the shape of a $$cosh$$ function. Hence, we are trying to solve $$f(x) = a cosh(b x)$$, for $$a$$ and $$b$$.
+From the mechanics lessons, I remember that the chain spanned between two points under the gravitational force takes the shape of a $$cosh$$ function. Hence, we are trying to solve $$f(x) = a cosh(b x)$$, for $$a$$ and $$b$$. Here, I scale $$f(x)$$ in such a way, that $$f(0)=1$$ by dividing all measurements by 20.
 
-We have three unknowns that we want to find, hence we need 3 equations:
+Now, we have two unknowns that we want to find, hence we need 2 equations:
 
-1) $$f(0) = a cosh(0) = 20 \Rightarrow a = 20$$
+1) Let $$l = \frac{L}{2}$$, then $$f(l) = cosh(a l)=2.5 \Rightarrow al = cosh^{-1}(2.5) \approx 1.5668$$
 
-2) Let $$l = \frac{L}{2}$$, then $$f(l) = 20 cosh(b l)=50 \Rightarrow bl = cosh^{-1}(2.5) \approx 1.5668$$
+2) The length of a curve can be calculated by:
+$$l = \int^{l}_{0} ds = 2.5, \text{ where } ds = \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx$$
 
-3) The length of a curve can be calculated by:
-$$l = \int^{l}_{0} ds = 40, \text{ where } ds = \sqrt{1 + \left( \frac{dy}{dx} \right)^2} dx$$
+$$\frac{d}{dx} cosh(a x) = a sinh(x)$$
+$$\int^l_0 \sqrt{1+a^2 sinh^2 (a x)}\ dx = 2$$
 
-Fortunately, $$cosh$$ has the useful property, such that the area underneath it is equal to the length of the curve above. Therefore:
+Now, we can use e.g. Numpy trapezoid numerical integration to calculate that integral. If we guess $$l$$ (the half of the span between the columns), then parameter $$a=1.5668/l$$.
 
-$$ \begin{align*}
-20\int^{l}_{0} cosh(b x)\ dx &= 40 \\
-\int^{l}_{0} cosh(bx)\ dx &= 2 \\
-b^{-1} \left[ sinh(bx) \right]^l_0 &= 2 \\
-b = \frac{sinh(bl)}{2} &= \frac{sinh(cosh^{-1}(2.5))}{2} = \sqrt{1.5 \times 3.5}\times0.5\\
-\Rightarrow b=1.1456
-\end{align*} $$
+{% highlight python %}
+def f(l):
+    x = np.linspace(0, l, 1000)
+    a = 1.5668/l
+    
+    return np.sqrt(1 + np.power(a*np.sinh(a*x), 2)), x
 
-And,
+for l in np.linspace(1.15, 1.153, 100):
+    if np.isclose(np.trapz(*f(l)), 2, atol=1e-10):
+        print(l)
 
-$$1.456\times l = 1.5668 \Rightarrow l\approx \frac{1.5668}{1.1456} = 1.3677$$
+a = 1.5668/1.152
+g = lambda x: np.cosh(a*x)
+{% endhighlight %}
 
-So, $$\frac{L}{2}=1.3677 \Rightarrow L=2.7353$$
+This simulation, gives us the answer to what the $$l$$ could be. With $$l=1.15$$ the integral integrates to 2.0, and after multiplying it by the scaling factor (20) we get $$l=23$$ meters.
 
 **Answer:**
 
-*The span between the poles is around **2.7353** meters long.*
+*The span between the poles is around **23** meters.*
