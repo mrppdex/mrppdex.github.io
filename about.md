@@ -6,8 +6,6 @@ permalink: /about/
 
 Proficient individual with strong educational background in data analysis and proven experience in leading various administrative procedures within high-profile organisation.
 
-Actively looking for new career opportunities.
-
 ### Contact me
 
 [aspiela@gmail.com](mailto:aspiela@gmail.com)
