@@ -28,7 +28,7 @@ $$ \begin{align*}
 20\int^{l}_{0} cosh(b x)\ dx &= 40 \\
 \int^{l}_{0} cosh(bx)\ dx &= 2 \\
 b^{-1} \left[ sinh(bx) \right]^l_0 &= 2 \\
-b = \frac{sinh(bl)}{2} &= \frac{sinh(cosh^{-1}(2.5)}{2} = \sqrt{1.5 \times 3.5}\times0.5\\
+b = \frac{sinh(bl)}{2} &= \frac{sinh(cosh^{-1}(2.5))}{2} = \sqrt{1.5 \times 3.5}\times0.5\\
 \Rightarrow b=1.1456
 \end{align*} $$
 
