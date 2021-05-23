@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+<title>Data visualisation: D3.js in Statistics</title>
+
+<meta property="description" itemprop="description" content="A brief introduction to D3.js."/>
+
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2021-05-22"/>
+<meta property="article:created" itemprop="dateCreated" content="2021-05-22"/>
+<meta name="article:author" content="Pawel Piela"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Data visualisation: D3.js in Statistics"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="A brief introduction to D3.js."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Data visualisation"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Data visualisation: D3.js in Statistics"/>
+<meta property="twitter:description" content="A brief introduction to D3.js."/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+  
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","categories"]}},"value":[{"type":"character","attributes":{},"value":["D3.js in Statistics"]},{"type":"character","attributes":{},"value":["A brief introduction to D3.js."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Pawel Piela"]}]}]},{"type":"character","attributes":{},"value":["05-22-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["d3js"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["a-brief-introduction-to-d3js-for-data-scientists_files/anchor-4.2.2/anchor.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/bowser-1.9.3/bowser.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/d3.v6.js","a-brief-introduction-to-d3js-for-data-scientists_files/d3v5-5.9.2/API.md","a-brief-introduction-to-d3js-for-data-scientists_files/d3v5-5.9.2/CHANGES.md","a-brief-introduction-to-d3js-for-data-scientists_files/d3v5-5.9.2/d3.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/d3v5-5.9.2/LICENSE","a-brief-introduction-to-d3js-for-data-scientists_files/d3v5-5.9.2/README.md","a-brief-introduction-to-d3js-for-data-scientists_files/d3v6-6.2.0/API.md","a-brief-introduction-to-d3js-for-data-scientists_files/d3v6-6.2.0/CHANGES.md","a-brief-introduction-to-d3js-for-data-scientists_files/d3v6-6.2.0/d3.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/d3v6-6.2.0/LICENSE","a-brief-introduction-to-d3js-for-data-scientists_files/d3v6-6.2.0/README.md","a-brief-introduction-to-d3js-for-data-scientists_files/distill-2.2.21/template.v2.js","a-brief-introduction-to-d3js-for-data-scientists_files/header-attrs-2.8/header-attrs.js","a-brief-introduction-to-d3js-for-data-scientists_files/htmlwidgets-1.5.3/htmlwidgets.js","a-brief-introduction-to-d3js-for-data-scientists_files/jquery-1.11.3/jquery.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/lodash.js","a-brief-introduction-to-d3js-for-data-scientists_files/popper-2.6.0/popper.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/r2d3-binding-0.2.5/r2d3.js","a-brief-introduction-to-d3js-for-data-scientists_files/r2d3-render-0.1.0/r2d3-render.js","a-brief-introduction-to-d3js-for-data-scientists_files/tippy-6.2.7/tippy-bundle.umd.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/tippy-6.2.7/tippy-light-border.css","a-brief-introduction-to-d3js-for-data-scientists_files/tippy-6.2.7/tippy.css","a-brief-introduction-to-d3js-for-data-scientists_files/tippy-6.2.7/tippy.umd.min.js","a-brief-introduction-to-d3js-for-data-scientists_files/webcomponents-2.0.0/webcomponents.js","d3/axis.js","d3/intplot.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.8/header-attrs.js"></script>
+  <script src="../../site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="../../site_libs/r2d3-render-0.1.0/r2d3-render.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/r2d3-binding-0.2.5/r2d3.js"></script>
+  <script src="../../site_libs/d3v5-5.9.2/d3.min.js"></script>
+  <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"D3.js in Statistics","description":"A brief introduction to D3.js.","authors":[{"author":"Pawel Piela","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-05-22T00:00:00.000+00:00","citationText":"Piela, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Data visualisation</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>D3.js in Statistics</h1>
+<!--radix_placeholder_categories-->
+<div class="dt-tags">
+  <a href="../../index.html#category:d3js" class="dt-tag">d3js</a>
+</div>
+<!--/radix_placeholder_categories-->
+<p><p>A brief introduction to D3.js.</p></p>
+</div>
+
+<div class="d-byline">
+  Pawel Piela  
+  
+<br/>05-22-2021
+</div>
+
+<div class="d-article">
+<p>Those who used both Python or R to perform their statistical inference, or build the machine learning models know, that these environments together with their rich libraries can enable the practitioner to do anything they want. They are great for prototyping and performing experiments. Python in conjunction with Django or Flask can be used to build a fully contained web applications. R with it’s Shiny environment can be used to build interactive dashboards. The shortcoming is that these applications have to run on the server and the resources has to be purchased before the content is shared to a wider audience. One of the solutions to this is to use the audience and their computing power to transform and present the data.</p>
+<p>I have some experience in using R and Python. The main issue I have encountered is that making a move from the experimental phase to publishing is always difficult. After the project is concluded many times it goes back to the drawer, because publishing it would require paying for the computational power or the cloud providers.</p>
+<h2 id="d3.js">D3.js</h2>
+<p>D3.js is a JavaScript framework used to create data driven interactive documents. It is not a graphical library, that can be used to create the interactive content quickly. But once it is mastered, it becomes invaluable help in publishing interactive documents. D3.js is used to create many visually appealing and informative visualisations <a href="https://observableht.com/">Observable</a>.</p>
+<h2 id="example">Example</h2>
+<p>Here, we will built an interactive D3.js widget which plots an arbitrary function and calculates the integral under the selected part of the plot. We will use the probability density function of the normal distribution and let the widget calculate the area under two specified x values i.e. the probability.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">f</span>(x) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// standard normal pdf</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span><span class="op">/</span><span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>))<span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>x<span class="op">*</span>x<span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><span class="math display">\[\begin{equation}
+p(x; 0, 1) = \frac{1}{\sqrt{2\pi}}\exp\left( -\frac{x^2}{2} \right)
+\end{equation}\]</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-a1a688e304fd771b5e17" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a1a688e304fd771b5e17">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\n\nfunction f(x) {\n    return (1/Math.sqrt(2*Math.PI))*Math.exp(-x*x/2);\n}\n\nfunction trapInt(fx, dx) {\n    fxN1 = _.initial(fx);\n    sumFx = fxN1.reduce((a, v) => a+v);\n    return dx*(sumFx + (fx[0] + fx[fx.length - 1])/2);\n}\n\nfunction main() {\n\n    var dx = 1/50; // granuality of the chart\n    var margins = {top: 20, right: 10, bottom: 50, left: 10};\n\n    var xVals = d3.range(-5, 5, dx); // x\n    var yVals = xVals.map( x => f(x)); // f(x)\n\n    // define the scales\n    var scX = d3.scaleLinear()\n      .domain(d3.extent(xVals))\n      .range([margins.left, width - margins.right])\n      .nice();\n\n    var scY = d3.scaleLinear()\n      .domain(d3.extent(yVals))\n      .range([height - margins.bottom, margins.top])\n      .nice();\n\n    // scale x and f(x) to the screen coordinates\n    var data = xVals.map( (d, i) => [scX(d), scY(yVals[i])]);\n\n    // create axes\n    var xAxis = d3.axisBottom(scX);\n    var yAxis = d3.axisLeft(scY);\n    \n    var foreground  = svg.append(\"g\").append(\"rect\")\n      .attr(\"x\", 0).attr(\"y\", 0)\n      .attr(\"width\", width).attr(\"height\", height)\n      .attr(\"opacity\", 0);\n\n    // add axes to the svg component\n    svg.append(\"g\")\n      .attr(\"transform\", `translate(0, ${scY(0)})`)\n      .call(xAxis);\n    \n    svg.append(\"g\")\n      .attr(\"transform\", `translate(${scX(0)}, 0)`)\n      .call(yAxis);\n\n\n    // plot\n    var lineMkr = d3.line().curve(d3.curveLinear);\n\n    // line\n    var chart = svg.append(\"g\")\n      .append(\"path\")\n      .attr(\"d\", lineMkr(data))\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"orange\")\n      .attr(\"stroke-width\", 2);\n\n    // cooridiates text\n    var coord = svg.append(\"text\")\n      .attr(\"visibility\", \"hidden\");\n\n    // currently selected value\n    var circle = svg.append(\"g\")\n      .append(\"circle\")\n      .attr(\"visibility\", \"hidden\");\n\n    // add event listeners\n    svg.on(\"mousemove\", function(event) {\n        var pt = d3.mouse(svg.node()); // point in the svg component coordinates\n\n        // get coordinates of the selected point\n        var xPos = _.clamp(scX.invert(pt[0]), d3.min(xVals), d3.max(xVals));\n        var yPos = f(xPos);\n\n        // draw \n        circle\n          .attr(\"r\", 5)\n          .attr(\"cx\", scX(xPos))\n          .attr(\"cy\", scY(yPos))\n          .attr(\"visibility\", \"visible\");\n\n        // format displayed coordinates text\n        var txtPos = `(${d3.format(\".2f\")(xPos)}, ${d3.format(\".2f\")(yPos)})`;\n\n        coord\n          .attr(\"x\", pt[0] > width/2 ? scX(xPos) - 10 : scX(xPos) + 10)\n          .attr(\"y\", scY(yPos))\n          .attr(\"visibility\", \"visible\")\n          .attr(\"text-anchor\", pt[0] > width/2 ? \"end\" : \"start\")\n          .text(txtPos);\n    })\n    .on(\"mouseout\", function(event) {\n        // hide the circle an the associated text\n        circle.attr(\"visibility\", \"hidden\");\n        coord.attr(\"visibility\", \"hidden\");\n    });\n\n    // SELECT THE AREA\n\n    // define the closed selection\n    var selectionMaker = d3.line().curve(d3.curveLinearClosed);\n\n    var selectionSvg = svg.append(\"g\")\n      .append(\"path\")\n      .attr(\"fill\", \"steelblue\")\n      .attr(\"opacity\", .2)\n      .attr(\"visibility\", \"hidden\");\n\n    // display the area\n    var txtArea = svg.append(\"g\")\n      .append(\"text\")\n      .attr(\"x\", 50)\n      .attr(\"y\", 50)\n      .attr(\"font-family\", \"sans-serif\")\n      .attr(\"visibility\", \"hidden\");\n\n    var dragStart; // x screen coordinate\n    var dragEnd;  // x screen coordinate\n    var selectionIdx; // boolean vector indicating which data values are being used in selection\n    var h0 = scY(0); // y=0 in screen coordinates\n\n    // on click hide the selection and displayed area\n    svg.on(\"click\", function(event) {\n        selectionSvg.attr(\"visibility\", \"hidden\");\n        txtArea.attr(\"visibility\", \"hidden\");\n        dragStart = undefined;\n    });\n\n    // define the drag behaviour\n    var drag = d3.drag()\n      .on(\"start\", function(event) {\n          dragStart = d3.mouse(svg.node())[0];\n          dragEnd = dragStart;\n      })\n      .on(\"drag\", function(event) {\n        var pt = d3.mouse(svg.node());\n\n        dragEnd = pt[0]; // end selection at the current x poisition\n        \n        console.log(\"From \" + dragStart + \" to \" + dragEnd);\n\n        // to reduce errors due to the granuality\n        // calculate exact start and end coordinates\n        var exactStartY = scY(f(scX.invert(dragStart)));\n        var exactEndY = scY(f(scX.invert(dragEnd)));\n\n        // determine which data points are included in the selection\n        selectionIdx = data.map( d => _.inRange(d[0], dragStart, dragEnd));\n\n        // select only relevant slice of the chart data\n        var selection = data.filter( (d, i) => selectionIdx[i]);\n\n        // add the additional points to close the curve\n        add2Sel = [[dragEnd, h0], [dragStart, h0]].sort( (a, b) => b[0] - a[0]);\n        addExact = [[dragEnd, exactEndY], [dragStart, exactStartY]].sort( (a, b) => b[0] - a[0]);\n\n        add2Sel = _.concat([addExact[0]], add2Sel, [addExact[1]]);\n        selection = _.concat(selection, add2Sel);\n        \n        // draw the selection\n        selectionSvg\n          .attr(\"d\", selectionMaker(selection))\n          .attr(\"visibility\", \"visible\");\n\n        // update the position of the circle while dragging\n\n        var xPos = _.clamp(scX.invert(pt[0]), d3.min(xVals), d3.max(xVals));\n        var yPos = f(xPos);\n\n        circle\n            .attr(\"r\", 5)\n            .attr(\"cx\", scX(xPos))\n            .attr(\"cy\", scY(yPos))\n            .attr(\"visibility\", \"visible\");\n\n        var txtPos = `(${d3.format(\".2f\")(xPos)}, ${d3.format(\".2f\")(yPos)})`;\n\n        coord\n            .attr(\"x\", pt[0] > width/2 ? scX(xPos) - 10 : scX(xPos) + 10)\n            .attr(\"y\", scY(yPos))\n            .attr(\"visibility\", \"visible\")\n            .attr(\"text-anchor\", pt[0] > width/2 ? \"end\" : \"start\")\n            .text(txtPos);\n      })\n      .on(\"end\", function() {\n          var fx = yVals.filter( (d, i) => selectionIdx[i] );\n\n          if (fx.length > 1) {\n              txtArea.text(\"Selected Area: \" + d3.format(\".3f\")(trapInt(fx, dx)))\n                .attr(\"visibility\", \"visible\");\n          }\n      });\n\n    // add the dragging behaviour to the svg element\n    drag(foreground);\n\n}\n\nmain();\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>The CDF of the normal distribution does not have a closed form and is defined as:</p>
+<p><span class="math display">\[
+\text{CDF} = \frac{1}{2} \left[ 1 + \text{erf} \left( \frac{x-\mu}{\sigma \sqrt{2}} \right) \right]
+\]</span> Where,</p>
+<p><span class="math display">\[
+\text{erf}\ z = \frac{2}{\sqrt{\pi}} \int_0^z e^{-t^2}\ dt
+\]</span></p>
+<p>The usual method to calculate the CDF would involve using the statistical software such as <strong>R</strong>, e.g. <span class="math inline">\(P(-1 &lt; X &lt; 1) =\)</span> <code>pnorm(1) - pnorm(-1) =</code> 0.6826895, or can be read from the statistical tables.</p>
+<p>In this example we use the <strong>trapezoidal rule</strong> to calculate the approximate area under the curve:</p>
+<p><span class="math display">\[
+\int_a^b f(x)\ dx \approx \Delta x \left( \sum\limits_{k=1}^{N-1} x_k + \frac{f(x_N)+f(x_0)}{2} \right)
+\]</span></p>
+<h2 id="svg">SVG</h2>
+<p>D3.js can manipualte the whole DOM document structure, but we are interested in plotting by using the SVG format. First we have to add <code>&lt;svg&gt;&lt;/svg&gt;</code> block to the DOM structure as a child of <code>&lt;body&gt;</code> element.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">select</span>(<span class="st">&quot;body&quot;</span>)<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;svg&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>            <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;width&quot;</span><span class="op">,</span> <span class="dv">600</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;height&quot;</span><span class="op">,</span> <span class="dv">600</span>)<span class="op">;</span></span></code></pre></div>
+<p>Here we selected the <code>&lt;body&gt;</code> element and added <code>&lt;svg&gt;</code> as one of it’s children. We also set the width to 600px and height to 600px.</p>
+<p>Another very important elements of D3.js scripts are scales</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> scalerLin <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> width<span class="dv">-10</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">nice</span>()<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> scalerLog <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLog</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="fl">1e-3</span><span class="op">,</span> <span class="fl">1e6</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([<span class="dv">10</span><span class="op">,</span> width<span class="dv">-10</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">nice</span>()<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> scalerLinInv <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>])</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([width<span class="dv">-10</span><span class="op">,</span> <span class="dv">10</span>])</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">nice</span>()<span class="op">;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> axisLin <span class="op">=</span> d3<span class="op">.</span><span class="fu">axisTop</span>(scalerLin)<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> axisLog <span class="op">=</span> d3<span class="op">.</span><span class="fu">axisTop</span>(scalerLog)<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> axisLinInv <span class="op">=</span> d3<span class="op">.</span><span class="fu">axisTop</span>(scalerLinInv)<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;transform&quot;</span><span class="op">,</span> <span class="vs">`translate(0, </span><span class="sc">${</span>height<span class="op">/</span><span class="dv">4</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(axisLog)<span class="op">;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;transform&quot;</span><span class="op">,</span> <span class="vs">`translate(0, </span><span class="sc">${</span>height<span class="op">/</span><span class="dv">2</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(axisLin)<span class="op">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;transform&quot;</span><span class="op">,</span> <span class="vs">`translate(0, </span><span class="sc">${</span><span class="dv">3</span><span class="op">*</span>height<span class="op">/</span><span class="dv">4</span><span class="sc">}</span><span class="vs">)`</span>)<span class="op">.</span><span class="fu">call</span>(axisLinInv)<span class="op">;</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-863b0bdf6fbc34df75f3" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-863b0bdf6fbc34df75f3">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\nvar scalerLin = d3.scaleLinear()\n  .domain([0, 1])\n  .range([10, width-10])\n  .nice();\n  \nvar scalerLog = d3.scaleLog()\n  .domain([1e-3, 1e6])\n  .range([10, width-10])\n  .nice();\n  \nvar scalerLinInv = d3.scaleLinear()\n  .domain([0, 1])\n  .range([width-10, 10])\n  .nice();\n\nvar axisLin = d3.axisTop(scalerLin);\nvar axisLog = d3.axisTop(scalerLog);\nvar axisLinInv = d3.axisTop(scalerLinInv);\n\nsvg.append(\"g\").attr(\"transform\", `translate(0, ${height/4})`).call(axisLog);\nsvg.append(\"g\").attr(\"transform\", `translate(0, ${height/2})`).call(axisLin);\nsvg.append(\"g\").attr(\"transform\", `translate(0, ${3*height/4})`).call(axisLinInv);\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Scalers created with <code>d3.scale*</code> family of functions play important role in translating the virtual coordiantes into pixel coordinates within the SVG node.</p>
+<p>Once the scaler is defined, we can use it to create an axis. Note, that by default, the axis will be placed at the <code>(0, 0)</code> coordinate of its parent and we have to change this behaviour by adding a new generic element <code>&lt;g&gt;</code> and move it to the desired place using <code>transform</code> attribute. Here, we use the <code>height</code> of the plotting area to place the horizontal axes in equal distances.</p>
+<h3 id="drawing-lines">Drawing lines</h3>
+<p>To draw the lines, circles, and text we can use the specified <code>SVG</code> elements such as <code>&lt;line&gt;</code>, <code>&lt;circle&gt;</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;line&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;stroke&quot;</span><span class="op">,</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;stroke-width&quot;</span><span class="op">,</span> <span class="dv">3</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x1&quot;</span><span class="op">,</span> <span class="dv">50</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y1&quot;</span><span class="op">,</span> height<span class="dv">-50</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x2&quot;</span><span class="op">,</span> width<span class="dv">-50</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y2&quot;</span><span class="op">,</span> <span class="dv">50</span>)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> centres <span class="op">=</span> [[<span class="dv">50</span><span class="op">,</span> height<span class="dv">-50</span>]<span class="op">,</span> [width<span class="dv">-50</span><span class="op">,</span> <span class="dv">50</span>]]<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">data</span>(centres)<span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;r&quot;</span><span class="op">,</span> <span class="dv">7</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cx&quot;</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[<span class="dv">0</span>])</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cy&quot;</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[<span class="dv">1</span>])</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;stroke&quot;</span><span class="op">,</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;red&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-73af3ea2642f58f349f7" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73af3ea2642f58f349f7">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\nsvg.append(\"line\")\n  .attr(\"stroke\", \"black\")\n  .attr(\"stroke-width\", 3)\n  .attr(\"x1\", 50).attr(\"y1\", height-50)\n  .attr(\"x2\", width-50).attr(\"y2\", 50);\n\nvar centres = [[50, height-50], [width-50, 50]];\n\nsvg.append(\"g\")\n  .selectAll(\"circle\")\n  .data(centres).enter()\n  .append(\"circle\")\n    .attr(\"r\", 7)\n    .attr(\"cx\", d => d[0])\n    .attr(\"cy\", d => d[1])\n    .attr(\"stroke\", \"none\")\n    .attr(\"fill\", \"red\");\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Drawing lines this way is not the most efficient solution and it is better to use the turtle-like language and the <code>d</code> attribute of the <code>path</code> element. To do that, we need to keep the <code>(x, y)</code> coordinates stored as a touple in an array so that it looks as follows: <code>[[x1, y1], [x2, y2], ... , [xN, yN]]</code>. D3.js provides us with line maker factories which are automatising the like drawing and also let us decide wheter we want to use spline polynomials, connect the dots or maybe use one of the other methods from the library.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> margin <span class="op">=</span> {<span class="dt">top</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">50</span>}<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> data <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span> <span class="dv">7</span>}<span class="op">,</span> (d<span class="op">,</span>i) <span class="kw">=&gt;</span> [i<span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()])<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> xScaler <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> data<span class="op">.</span><span class="at">length</span> <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])<span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> yScaler <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])<span class="op">;</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> data<span class="op">.</span><span class="fu">map</span>( d <span class="kw">=&gt;</span> [<span class="fu">xScaler</span>(d[<span class="dv">0</span>])<span class="op">,</span> <span class="fu">yScaler</span>(d[<span class="dv">1</span>])])<span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">selectAll</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">data</span>(data)<span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;r&quot;</span><span class="op">,</span> <span class="dv">7</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cx&quot;</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[<span class="dv">0</span>])</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cy&quot;</span><span class="op">,</span> d <span class="kw">=&gt;</span> d[<span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> lineMaker <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()<span class="op">.</span><span class="fu">curve</span>(d3<span class="op">.</span><span class="at">curveNatural</span>)<span class="op">;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;path&quot;</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;d&quot;</span><span class="op">,</span> <span class="fu">lineMaker</span>(data))</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;stroke&quot;</span><span class="op">,</span> <span class="st">&quot;steelblue&quot;</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;stroke-width&quot;</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-9df4f48f03133d4840fa" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9df4f48f03133d4840fa">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\nvar margin = {top: 50, right: 50, bottom: 50, left: 50};\n\nvar data = Array.from({length: 7}, (d,i) => [i, Math.random()]);\n\nvar xScaler = d3.scaleLinear()\n  .domain([0, data.length - 1])\n  .range([margin.left, width - margin.right]);\n\nvar yScaler = d3.scaleLinear()\n  .domain([0, 1])\n  .range([height - margin.bottom, margin.top]);\n\ndata = data.map( d => [xScaler(d[0]), yScaler(d[1])]);\n\nsvg.append(\"g\")\n  .selectAll(\"circle\")\n  .data(data).enter()\n  .append(\"circle\")\n    .attr(\"r\", 7)\n    .attr(\"fill\", \"black\")\n    .attr(\"cx\", d => d[0])\n    .attr(\"cy\", d => d[1]);\n\nvar lineMaker = d3.line().curve(d3.curveNatural);\n\nsvg.append(\"g\")\n  .append(\"path\")\n  .attr(\"d\", lineMaker(data))\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4);\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="handling-of-events">Handling of events</h2>
+<p>So far we discussed how to use scalers, add axes to the plot and how to plot a line. One vital functionality that we have to add to the widged is how to respond to the <strong>mouse events</strong> such as <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event"><code>mouseover</code></a> or <code>click</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> circle <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;r&quot;</span><span class="op">,</span> <span class="dv">50</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cx&quot;</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cy&quot;</span><span class="op">,</span> height<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;gray&quot;</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;click&quot;</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> el <span class="op">=</span> d3<span class="op">.</span><span class="fu">select</span>(<span class="kw">this</span>)<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      <span class="kw">var</span> col <span class="op">=</span> el<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>      el<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> () <span class="kw">=&gt;</span> col <span class="op">===</span> <span class="st">&quot;gray&quot;</span><span class="op">?</span><span class="st">&quot;black&quot;</span><span class="op">:</span><span class="st">&quot;gray&quot;</span>)<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;text&quot;</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;font-family&quot;</span><span class="op">,</span> <span class="st">&quot;sans-serif&quot;</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;font-size&quot;</span><span class="op">,</span> <span class="dv">24</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;text-anchor&quot;</span><span class="op">,</span> <span class="st">&quot;middle&quot;</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x&quot;</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y&quot;</span><span class="op">,</span> height<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">10</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;white&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;click!&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-c25a951eb617bb5be723" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c25a951eb617bb5be723">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\n    var circle = svg.append(\"circle\")\n      .attr(\"r\", 50)\n      .attr(\"cx\", width/2)\n      .attr(\"cy\", height/2)\n      .attr(\"fill\", \"gray\")\n      .on(\"click\", function(event) {\n          var el = d3.select(this);\n          var col = el.attr(\"fill\");\n          el.attr(\"fill\", () => col === \"gray\"?\"black\":\"gray\");\n      });\n\n    svg.append(\"text\")\n        .attr(\"font-family\", \"sans-serif\")\n        .attr(\"font-size\", 24)\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"x\", width/2).attr(\"y\", height/2 + 10)\n        .attr(\"fill\", \"white\")\n        .text(\"click!\");\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="drag-and-drop">Drag and drop</h2>
+<p>The last missing element that has been used to build our widget is the drag-and-drop functionality. To add drag behaviour to the application we use the <code>d3.drag()</code> factory function and specify what actions we want to take when the drag action is started, performed and finished. Then we call the drag factory function with the desired node as a parameter.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> hud <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;text&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x&quot;</span><span class="op">,</span> <span class="dv">50</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y&quot;</span><span class="op">,</span> <span class="dv">50</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;visibility&quot;</span><span class="op">,</span> <span class="st">&quot;hidden&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> dragon <span class="op">=</span> svg<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;g&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> circle <span class="op">=</span> dragon<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;circle&quot;</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;r&quot;</span><span class="op">,</span> <span class="dv">10</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cx&quot;</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cy&quot;</span><span class="op">,</span> height<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;fill&quot;</span><span class="op">,</span> <span class="st">&quot;black&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> pointer <span class="op">=</span> dragon<span class="op">.</span><span class="fu">append</span>(<span class="st">&quot;text&quot;</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x&quot;</span><span class="op">,</span> width<span class="op">/</span><span class="dv">2</span><span class="op">+</span><span class="dv">7</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y&quot;</span><span class="op">,</span> height<span class="op">/</span><span class="dv">2</span><span class="op">+</span><span class="dv">37</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;font-size&quot;</span><span class="op">,</span> <span class="dv">48</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;text-anchor&quot;</span><span class="op">,</span> <span class="st">&quot;middle&quot;</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;👆&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> drag <span class="op">=</span> d3<span class="op">.</span><span class="fu">drag</span>()</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;start&quot;</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    pointer<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;visibility&quot;</span><span class="op">,</span> <span class="st">&quot;hidden&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    hud<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;Drag event started...&quot;</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;visibility&quot;</span><span class="op">,</span> <span class="st">&quot;visible&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;drag&quot;</span><span class="op">,</span> <span class="kw">function</span>(<span class="bu">event</span>) {</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> pos <span class="op">=</span> d3<span class="op">.</span><span class="fu">pointer</span>(<span class="bu">event</span><span class="op">,</span> svg<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    circle<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cx&quot;</span><span class="op">,</span> pos[<span class="dv">0</span>])<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;cy&quot;</span><span class="op">,</span> pos[<span class="dv">1</span>])<span class="op">;</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    pointer<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;x&quot;</span><span class="op">,</span> pos[<span class="dv">0</span>] <span class="op">+</span> <span class="dv">7</span>)<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;y&quot;</span><span class="op">,</span> pos[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">37</span>)<span class="op">;</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    hud<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;You are dragging the element...&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">&quot;end&quot;</span><span class="op">,</span> <span class="kw">function</span>() {</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    pointer<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;visibility&quot;</span><span class="op">,</span> <span class="st">&quot;visible&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    hud<span class="op">.</span><span class="fu">text</span>(<span class="st">&quot;Drag event stopped...&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">.</span><span class="fu">timeout</span>(<span class="kw">function</span>() {</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>        hud<span class="op">.</span><span class="fu">attr</span>(<span class="st">&quot;visibility&quot;</span><span class="op">,</span> <span class="st">&quot;hidden&quot;</span>)<span class="op">;</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    }<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="fu">drag</span>(dragon)<span class="op">;</span></span></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-238b3b8d0315d2b03455" style="width:624px;height:384px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-238b3b8d0315d2b03455">{"x":{"data":null,"type":"NULL","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n\nsvg = d3.select(svg.node());\nvar hud = svg.append(\"text\")\n  .attr(\"x\", 50).attr(\"y\", 50)\n  .attr(\"visibility\", \"hidden\");\n\nvar dragon = svg.append(\"g\");\n\nvar circle = dragon.append(\"circle\")\n  .attr(\"r\", 10)\n  .attr(\"cx\", width/2)\n  .attr(\"cy\", height/2)\n  .attr(\"fill\", \"black\");\n\nvar pointer = dragon.append(\"text\")\n  .attr(\"x\", width/2+7)\n  .attr(\"y\", height/2+37)\n  .attr(\"font-size\", 48)\n  .attr(\"text-anchor\", \"middle\")\n  .text(\"👆\");\n\nvar drag = d3.drag()\n  .on(\"start\", function(event) {\n    pointer.attr(\"visibility\", \"hidden\");\n    hud.text(\"Drag event started...\")\n      .attr(\"visibility\", \"visible\");\n  })\n  .on(\"drag\", function(event) {\n    var pos = d3.mouse(svg.node());\n\n    circle.attr(\"cx\", pos[0]).attr(\"cy\", pos[1]);\n    pointer.attr(\"x\", pos[0] + 7).attr(\"y\", pos[1] + 37);\n\n    hud.text(\"You are dragging the element...\");\n\n  })\n  .on(\"end\", function() {\n    pointer.attr(\"visibility\", \"visible\");\n\n    hud.text(\"Drag event stopped...\");\n\n    d3.timeout(function() {\n        hud.attr(\"visibility\", \"hidden\");\n    }, 1000);\n  })\n\ndrag(dragon);\n};","style":null,"version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+</div>
+<h2 id="final-notes">Final notes</h2>
+<p>D3.js can be used to create interactive documents from within the RStudio environment by using the <code>r2d3</code> package. This website was created in markdown and the d3js code chunks were added and executed from within. For more information go to <a href="https://rstudio.github.io/r2d3/">r2d3 website</a>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

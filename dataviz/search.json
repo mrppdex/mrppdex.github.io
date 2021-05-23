@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "This blog is dedicated to the data visualisations.",
+      "author": [],
+      "contents": "\nHello! My name is Pawel. I am holding a MSc degree in statistics and work in a financial institution. Statistical programming and visualisation is my passion. If you’d like to contact me send an email to aspiela@gmail.com.\n\n\n\n",
+      "last_modified": "2021-05-23T13:41:07+01:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Pawel Piela",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-05-23T13:41:07+01:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
